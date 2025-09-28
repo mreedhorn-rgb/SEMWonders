@@ -126,4 +126,29 @@ img {
 #fullscreen.leaf {
      background-image: url('../images/leaf-zoom.png');
 }
+#fullscreen .info-text {
+    display: none;
+    width: 30vw;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #000a;
+    padding: 0.5rem 1.5rem;
+    font-size: 14px;
+    line-height: 120%;
+    font-weight: normal;
+    text-align: justify;
+}
+#fullscreen.mushroom #mushroom-text {
+    display: block;
+}
+#fullscreen.bug #bug-text {
+    display: block;
+}
+#fullscreen.stainedglass #stainedglass-text {
+    display: block;
+}
+#fullscreen.leaf #leaf-text {
+    display: block;
+}
 
