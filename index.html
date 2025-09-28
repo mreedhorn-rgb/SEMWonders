@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <title>SEM Wonders</title>
+</head>
+    <body>
+        <h1>Exploring Tiny Worlds</h1>
+        <p>
+            What might be hiding in some ordinary things you might see on the ground? 
+            Here are some objects that were found right on Vassar’s campus. 
+            Select a sample to observe under the SEM!
+        </p>
+        <div class="boxes">
+            <div class="box" id="bug" onclick="zoomin('bug')">
+                <img src="assets/images/bug.png">
+                <div class="red-circle" id="bug-circle"></div>
+            </div>
+
+            <div class="box" id="leaf" onclick="zoomin('leaf')">
+                <img src="assets/images/leaf.png">
+                <div class="red-circle" id="leaf-circle"></div>
+            </div>
+
+            <div class="box" id="mushroom" onclick="zoomin('mushroom')">
+                <img src="assets/images/mushroom.png">
+                <div class="red-circle" id="mushroom-circle"></div>
+            </div>
+
+            <div class="box" id="stainedglass" onclick="zoomin('stainedglass')">
+                <img src="assets/images/stainedglass.png">
+                <div class="red-circle" id="stainedglass-circle"></div>
+            </div>
+        </div>
+
+
+        <div id="fullscreen" onclick="zoomout()">
+            This is some text about the mushroom that we're looking at. It's cool to see the microstructure.
+            Let's take a closer look.
+        </div>
+
+
+    </body>
+    <script>
+
+        function zoomout() {
+            // get the fullscreen element
+            const full = document.getElementById('fullscreen');
+            full.classList.remove(...full.classList);
+
+            document.querySelectorAll('.box').forEach(box => box.classList.remove('zoom'));
+        }
+
+        function zoomin(target) {
+
+            // get the fullscreen element
+            const full = document.getElementById('fullscreen');
+
+            // get the <div> element that contains the image
+            const box = document.getElementById(target);
+
+            // add the 'zoom' class to the box
+            box.classList.add('zoom');
+
+            // wait 3 seconds before we cross fade
+            setTimeout(() => {
+                full.classList.add('fadein', target);
+            }, 2000);
+        }
+    </script>
+</html>

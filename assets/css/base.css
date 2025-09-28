@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    background-color: rgb(117, 160, 162);
+    padding: 20px;
+}
+
+h1 {
+    font-family: "Alfa Slab One", serif;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    text-shadow: 3px 3px 3px #0003;
+    font-size: 40px;
+}
+
+p {
+    color:white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    max-width: 950px;
+}
+
+img {
+    width: 400px;
+}
+
+.boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    width: 900px;
+}
+
+.box {
+    overflow:hidden;
+    width:400px;
+    height: 372px;
+    display:inline-block;
+    margin: 20px;
+    position: relative;
+}
+
+.box.zoom img {
+    transform: scale(10);
+    transition: transform 2s ease-in-out;
+}
+
+
+
+.red-circle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 3px solid red;
+    background-color: #f002;
+    border-radius: 50%;
+    top: 20px;
+    left: 20px;
+}
+
+.zoom .red-circle {
+    border: 3px solid green;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+/* First mushroom circle */
+#mushroom-circle {
+    top: 205px;
+    left: 160px;
+}
+
+/* Stained glass circle */
+#stainedglass-circle {
+    top: 220px;
+    left: 210px;
+}
+
+/* Leaf circle */
+#leaf-circle {
+    top: 160px;
+    left: 250px;
+}
+
+/* First bug circle */
+#bug-circle {
+    top: 115px;
+    left: 135px;
+}
+
+
+#mushroom img { transform-origin: 177px 225px; }
+#stainedglass img { transform-origin: 230px 235px; }
+#leaf img { transform-origin: 275px 180px; }
+#bug img { transform-origin: 157px 140px; }
+
+
+
+#fullscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: none;
+    background-size: cover;
+    opacity: 0.0;
+    transition: opacity 2s;
+    pointer-events: none;
+}
+
+#fullscreen.fadein {
+    opacity: 1;
+    pointer-events: all;
+}
+#fullscreen.mushroom {
+    background-image: url('../images/mushroom-zoom.png');
+}
+#fullscreen.bug {
+    background-image: url('../images/bug-zoom.png');
+}
+#fullscreen.stainedglass {
+    background-image: url('../images/stainedglass-zoom.png');
+}
+#fullscreen.leaf {
+     background-image: url('../images/leaf-zoom.png');
+}
+
