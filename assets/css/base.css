@@ -5,31 +5,44 @@ body {
     padding: 20px;
 }
 
+.info-title {
+    grid-row: span 2;
+    width: 30vw;
+    margin-top: 20vh;
+}
+
 h1 {
     font-family: "Alfa Slab One", serif;
     font-weight: 300;
     font-style: normal;
     color: white;
     text-shadow: 3px 3px 3px #0003;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 p {
     color:white;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     max-width: 950px;
+    font-size: 25px;
 }
 
 img {
     width: 400px;
 }
 
+img#logo {
+    width: 170px;
+    margin: 4rem auto;
+}
+
 .boxes {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
     width: 900px;
+    padding-top: 4rem;
 }
 
 .box {
@@ -128,16 +141,18 @@ img {
 }
 #fullscreen .info-text {
     display: none;
-    width: 30vw;
+    width: 37vw;
     position: absolute;
     top: 1rem;
     right: 1rem;
     background-color: #000a;
     padding: 0.5rem 1.5rem;
-    font-size: 14px;
     line-height: 120%;
     font-weight: normal;
     text-align: justify;
+}
+#fullscreen .info-text p {
+    font-size: 16px !important;
 }
 #fullscreen.mushroom #mushroom-text {
     display: block;
