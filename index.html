@@ -9,12 +9,13 @@
 body {
     background-color: rgb(117, 160, 162);
     padding: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .info-title {
     grid-row: span 2;
-    width: 30vw;
-    margin-top: 20vh;
+    /* width: 30vw; */
+    /* margin-top: 20vh; */
 }
 
 h1 {
@@ -28,9 +29,23 @@ h1 {
 
 p {
     color:white;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     max-width: 950px;
-    font-size: 25px;
+    font-size: 18px;
+}
+.emphasis {
+    font-weight: bold;
+    font-size: 130%;
+    color: cyan;
+    margin-top: 1rem;
+}
+
+footer {
+    display: block;
+    margin-right: 1.5rem;
+    font-size: 14px;
+    opacity: 80%;
+    color: white;
+    text-align: right;
 }
 
 img {
@@ -44,16 +59,15 @@ img#logo {
 
 .boxes {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr 440px 440px;
+    grid-template-rows: 400px 400px;
     gap: 10px;
-    width: 900px;
     padding-top: 4rem;
 }
 
 .box {
     overflow:hidden;
-    width:400px;
+    width: 400px;
     height: 372px;
     display:inline-block;
     margin: 20px;
@@ -184,11 +198,15 @@ img#logo {
                 <p>
                     What might be hiding in some ordinary things you might see on the ground? 
                     Here are some objects that were found right on Vassar’s campus. 
-                    Select a sample to observe under the SEM!
                 </p>
+                <p style="margin-top: 1rem; font-size: 130%; font-weight: bold;">
+                    Tap on the red circles to see an SEM image of each object.
+                </p>
+                <!--
                 <div style="text-align: center;">
                     <img src="assets/images/vassar.png" id="logo">
                 </div>
+            -->
             </div>
             <div class="box" id="bug" onclick="zoomin('bug')">
                 <img src="assets/images/bug.png">
@@ -226,6 +244,7 @@ img#logo {
                     nutrients that may have been compartmentalized in the leaf and used for cellular processes. Some of the 
                     nutrients visible in clusters are Manganese, Silicon, and Calcium.
                 </p>
+                <p class="emphasis">Tap anywhere to go back.</p>
             </div>
             <div id="mushroom-text" class="info-text">
                 <p>
@@ -238,6 +257,7 @@ img#logo {
                     are some examples of elements that are distributed homogeneously across the image, and are often indicative 
                     of organic material.
                 </p>
+                <p class="emphasis">Tap anywhere to go back.</p>
 
             </div>
             <div id="stainedglass-text" class="info-text">
@@ -251,6 +271,8 @@ img#logo {
                     of glass, show up in the lighter colored parts of this image. The darker parts of the image show elements that 
                     are indicative of organic matter, such as Potassium, Calcium, and Oxygen.                    
                 </p>                
+                <p class="emphasis">Tap anywhere to go back.</p>
+
             </div>
             <div id="bug-text" class="info-text">
                 <p>
@@ -263,9 +285,14 @@ img#logo {
                     examples of elements that are distributed homogeneously across the image, and are often indicative 
                     of organic material.
                 </p>
+                <p class="emphasis">Tap anywhere to go back.</p>
+
             </div>
         </div>
 
+        <footer>
+            Exhibit design by Madeleine Reed-Horn (Class of 2028)
+        </footer>
 
     </body>
     <script>
