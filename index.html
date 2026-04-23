@@ -50,7 +50,9 @@ footer {
 }
 
 img {
-    width: 400px;
+    /* height: 100%; */
+    /* width: 100%; */
+    height: calc(50vh - 5rem);
 }
 
 img#logo {
@@ -60,17 +62,19 @@ img#logo {
 
 .boxes {
     display: grid;
-    grid-template-columns: 1fr 400px 400px;
-    grid-template-rows: 380px 380px;
-    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
 }
 
 .box {
+    /*
     overflow:hidden;
     width: 380px;
     height: 360px;
     display:inline-block;
     margin: 20px;
+    */
     position: relative;
 }
 
