@@ -14,7 +14,6 @@ body {
 
 .info-title {
     grid-row: span 2;
-    /* width: 30vw; */
     margin-top: 20vh;
 }
 
@@ -49,12 +48,6 @@ footer {
     text-align: right;
 }
 
-img {
-    /* height: 100%; */
-    /* width: 100%; */
-    height: calc(50vh - 5rem);
-}
-
 img#logo {
     width: 170px;
     margin: 4rem auto;
@@ -62,38 +55,43 @@ img#logo {
 
 .boxes {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr calc(50vh - 5rem) calc(50vh - 5rem);
+    grid-template-rows: calc(50vh - 5rem) calc(50vh - 5rem);
     gap: 2rem;
 }
 
 .box {
-    /*
-    overflow:hidden;
-    width: 380px;
-    height: 360px;
     display:inline-block;
-    margin: 20px;
-    */
+    overflow: hidden;
+    vertical-align: middle;
     position: relative;
+}
+
+.box img {
+    height: 100%;
+}
+
+.box.zoom {
+    overflow: unset;
 }
 
 .box.zoom img {
     transform: scale(10);
     transition: transform 2s ease-in-out;
+    position: absolute;
+    z-index: 90;
 }
-
 
 
 .red-circle {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 10%;
+    height: 10%;
     border: 3px solid red;
     background-color: #f002;
     border-radius: 50%;
-    top: 20px;
-    left: 20px;
+    top: 40%;
+    left: 40%;
 }
 
 .zoom .red-circle {
@@ -104,26 +102,26 @@ img#logo {
 
 /* First mushroom circle */
 #mushroom-circle {
-    top: 205px;
-    left: 160px;
+    top: 45%;
+    left: 38%;
 }
 
 /* Stained glass circle */
 #stainedglass-circle {
-    top: 220px;
-    left: 210px;
+    top: 48%;
+    left: 48%;
 }
 
 /* Leaf circle */
 #leaf-circle {
-    top: 160px;
-    left: 250px;
+    left: 57%;
+    top: 43%;
 }
 
 /* First bug circle */
 #bug-circle {
-    top: 115px;
-    left: 135px;
+    top: 27%;
+    left: 35%;
 }
 
 
@@ -145,6 +143,7 @@ img#logo {
     opacity: 0.0;
     transition: opacity 2s;
     pointer-events: none;
+    z-index: 100;
 }
 
 #fullscreen.fadein {
